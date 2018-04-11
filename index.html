@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <script>
+      const node = document.getElementById('app')
+
+      fetch("/sample-response.json")
+        .then(resp => resp.json())
+        .then(data => { node.innerText = `${data.value}` })
+        .catch(e => { node.innerText = `error: ${e.message}` })
+    </script>
+  </body>
+</html>
